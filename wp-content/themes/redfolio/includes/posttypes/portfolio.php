@@ -67,7 +67,7 @@ function posttype_portfolio() {
                 'publicly_queryable' => true,
                 'exclude_from_search' => false,
                 'show_ui' => true,
-                'rewrite' => array( 'slug' => 'portfolioitem' ),
+                'rewrite' => array( 'slug' => 'portfolio' ),
                 'hierarchical' => true,
                 'menu_position' => 5,
                 'menu_icon' => $imagepath . $img,
