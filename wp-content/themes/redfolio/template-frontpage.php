@@ -6,12 +6,12 @@ Template Name: Front Page
 
 <?php get_header(); ?>
 
-<?php 
+<?php
 
 global $post;
 
 $args=array(
-	'orderby' => 'menu_order',                                        
+	'orderby' => 'menu_order',
 	'order' => 'ASC',
   	'post_type' => 'page',
   	'posts_per_page' => -1,
@@ -28,26 +28,26 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
         if( $detect->isMobile() && !$detect->isTablet() ){
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'mobile');
-        } else { 
+        } else {
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
         }
 
 	$title = get_the_title();
-	
+
 	$homefade = of_get_option('gg_homefade');
 
         $display = rwmb_meta( 'gxg_display' );
         $layout = rwmb_meta( 'gxg_section_layout' );
         $bgcolor = rwmb_meta( 'gxg_bgcolor' );
         $textcolor = rwmb_meta( 'gxg_textcolor' );
-        
+
         $offset_tablet = rwmb_meta( 'gxg_offset_tablet' );
         $offset_mobile = rwmb_meta( 'gxg_offset_mobile' );
-        
-        $title = rwmb_meta( 'gxg_title' );   
-        $hometitlesize = of_get_option('gg_hometitlesize');  
-        $minhometitlesize = of_get_option('gg_minhometitlesize');  
-        $sectiontitlesize = of_get_option('gg_sectiontitlesize');  
+
+        $title = rwmb_meta( 'gxg_title' );
+        $hometitlesize = of_get_option('gg_hometitlesize');
+        $minhometitlesize = of_get_option('gg_minhometitlesize');
+        $sectiontitlesize = of_get_option('gg_sectiontitlesize');
         $minsectiontitlesize = of_get_option('gg_minsectiontitlesize');
         $titlecolor = rwmb_meta( 'gxg_titlecolor' );
         $description = rwmb_meta( 'gxg_description' );
@@ -59,40 +59,40 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
         $button2text = rwmb_meta( 'gxg_button2text' );
         $button2url = rwmb_meta( 'gxg_button2url' );
 		$button2color = rwmb_meta( 'gxg_button2color' );
-	
-        if ( of_get_option('gg_homeimageborder') ) { 
+
+        if ( of_get_option('gg_homeimageborder') ) {
 				$homeimageborder = 'no-border';
         } else {
-				$homeimageborder = 'border';        			
-        } 	
-	
-	
+				$homeimageborder = 'border';
+        }
+
+
         if ( $display && $layout == 'home-section-slider' ) {
-        ?>	
+        ?>
 	        <section id="section-<?php the_ID(); ?>" class="slide slider-section">
 			<?php the_content(); ?>
 		</section>
 		<div id="offset"></div>
         <?php }
-        
-        
+
+
         elseif ( $display && $layout == 'video-section' ) {
-        ?>	
+        ?>
 	        <section id="section-<?php the_ID(); ?>" class="slide video-section">
                         <div class="videoWrapper">
                                 <?php echo $post->post_content; ?><br />
                         </div>
 		</section>
-        <?php }	
-	
+        <?php }
+
 
         elseif ( $display && $layout == 'home-section-image' ) {
-        	
+
         $placeholder_image = get_template_directory_uri() . '/images/ll.png';
-        
-        ?>     
+
+        ?>
                 <section id="section-<?php the_ID(); ?>" class="slide home-section <?php echo $homeimageborder; ?>">
-                
+
                 <div id="loader-wrapper">
 				    <div class="spinner">
 					  <div class="rect1"></div>
@@ -102,43 +102,43 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					  <div class="rect5"></div>
 					</div>
 				</div>
-				
 
-			
+
+
 			<div id="home-image" class="image-fullbg" <?php if( !$detect->isMobile() && $image != '' ){ ?> data-stellar-background-ratio="0"  <?php } ?> style="background-image: url(<?php echo $image[0]; ?>); <?php if( $detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_tablet; ?>px; <?php }  if( $detect->isMobile() && !$detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_mobile; ?>px; <?php } ?> "></div>
-			
 
-			
-			
-                        <div class="top-space"></div>                        
+
+
+
+                        <div class="top-space"></div>
                         <div class="container clearfix">
-	
+
 				<div class="<?php echo $layout; ?>">
-                                
-                                
-	
+
+
+
 	                                <?php if($title) { ?>
                                                 <div class="<?php if($homefade) { echo 'fade1'; } else { echo 'fade0'; } ?>">
                                                         <h1 class="home-title" style="color:<?php echo $titlecolor; ?>; font-size:<?php echo $hometitlesize; ?>px;">
                                                         		<div class="min-home-title" style="font-size:<?php echo $minhometitlesize; ?>px;"></div>
-                                                                <?php echo $title; ?>	
-                                                                
+                                                                <?php echo $title; ?>
+
                                                         </h1>
                                                 </div>
 	                                <?php } ?>
-                                        
+
                                         <div class="clear"></div>
-	                              
+
 	                                <?php
                                         $content = get_the_content();
-                                              
+
                                         if($description  ||  $content) { ?>
 
                                                 <div class="<?php if($homefade) { echo 'fade2'; } else { echo 'fade0'; } ?>">
                                                         <div class="home-subtitle" style="color:<?php echo $descriptioncolor; ?>; text-align:<?php echo $descriptionalignment; ?>;">
                                                         <?php echo $description; ?>
                                                 	</div>
-                                                	
+
                                                 	<?php
 						$content = the_content();
 						if($content != '') { ?>
@@ -147,13 +147,13 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 	                                        		<?php the_content(); ?>
 	                                		</div>
 	                                		<?php } ?>
-	                                		
+
                                                 </div>
 	                                <?php } ?>
 
                                         <?php if($button1text || $button2text) { ?>
                                         <div class="<?php if($homefade) { echo 'fade3'; } else { echo 'fade0'; } ?>">
-                                        
+
                                         	<ul class="sectionbuttons">
                                         		<?php if($button1text) { ?>
                                         		<li><a href="<?php echo $button1url; ?>" class="button1" style="background:<?php echo $button1color;  ?>;"><?php echo $button1text; ?></a></li>
@@ -166,122 +166,124 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                                         <?php } ?>
 
 				</div>
-	
+
 			</div>
-		
+
 		</section>
                 <div class="clear"></div>
 
         <?php }
-        elseif ( $display && $layout != 'home-section-image' && $layout != 'home-section-slider' && $layout != 'video-section') 
+        elseif ( $display && $layout != 'home-section-image' && $layout != 'home-section-slider' && $layout != 'video-section')
         {
-        
-        $placeholder_image = get_template_directory_uri() . '/images/ll.png';	
-        	
+
+        $placeholder_image = get_template_directory_uri() . '/images/ll.png';
+
         ?>
 
 	        <section id="section-<?php the_ID(); ?>" class="slide slide-<?php echo $layout; ?>">
 
 
-			
+
                         <div class="image-fullbg" <?php if( !$detect->isMobile() && $image != '' ){ ?> data-stellar-background-ratio="0"  <?php } ?> style="background-color:<?php echo $bgcolor  ?>; <?php if( $image != '' ){ ?>background-image: url(<?php echo $image[0]; ?>); <?php } ?> ; <?php if( $detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_tablet; ?>px; <?php }  if( $detect->isMobile() && !$detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_mobile; ?>px; <?php } ?> "></div>
-			
+
 
 
   			<div class="container clearfix">
-	
+
 				<div class="<?php echo $layout; ?>">
-				
+
                                         <?php if($title || $description) { ?>
                                         <div class="section-intro">
-                
+
                                                 <?php if($title) { ?>
                                                 <h1 class="slide-title" style="color:<?php echo $titlecolor; ?>; font-size:<?php echo $sectiontitlesize; ?>px; min-font-size:<?php echo $minsectiontitlesize; ?>px;">
                                                         <div class="min-slide-title" style="font-size:<?php echo $minsectiontitlesize; ?>px;"></div>
                                                         <?php echo $title; ?>
                                                 </h1>
                                                 <?php } ?>
-                                              
+
                                                 <?php if($description) { ?>
                                                 <div class="slide-description" style="color:<?php echo $descriptioncolor; ?>; text-align:<?php echo $descriptionalignment; ?>;">
                                                         <?php echo $description; ?>
                                                 </div>
                                                 <?php } ?>
-                                                        
+
                                         </div>
-                                        <?php } 
-        
+                                        <?php }
+
                                         if ($layout == 'contact-section') { ?>
-                                        
+
                                         <div class="contact-boxes-wrap">
-                                                
-                                        <?php if ( of_get_option('gg_googlemap') ) { 
-                                                $grid =  'grid_4'; 
+
+                                        <?php if ( of_get_option('gg_googlemap') ) {
+                                                $grid =  'grid_4';
                                                 $gmclass ='gmy';
-                                        } else { 
+                                        } else {
                                                 $grid =  'grid_6';
-                                                $gmclass =''; 
+                                                $gmclass ='';
                                         } ?>
-                                                        
+
                                                 <div class="contact-form equalheight <?php echo $grid; ?>">
                                                         <?php if ( of_get_option('gg_cf7') ) {
-                                                                echo do_shortcode( of_get_option('gg_cf7') ); 
+                                                                echo do_shortcode( of_get_option('gg_cf7') );
                                                         } ?>
                                                 </div>
-                                                
+
                                                 <?php
                                                 if ( of_get_option('gg_googlemap') ) {
                                                 ?>
                                                         <div  class="google-maps equalheight grid_4">
                                                                 <?php echo do_shortcode( '[bgmp-map]' ); ?>
                                                         </div>
-                                                <?php } ?>  
-                                                
+                                                <?php } ?>
+
                                                 <div class="contact-content equalheight <?php echo $grid, ' ', $gmclass; ?> omega">
                                                         <div class="contact-content-box">
                                                                 <?php the_content(); ?>
                                                         </div>
-                                                </div> 
-                                                                
-                                        </div>                                                
-                                                
+                                                </div>
+
+                                        </div>
+
                                         <?php } ?>
-                                        
-	                                
+
+
                                         <?php if ($layout != 'contact-section') { ?>
                                                 <div class="section-content">
                                                         <?php the_content(); ?>
-                                                </div>        
+                                                </div>
                                         <?php } ?>
 
-	                                <?php if ($layout == 'portfolio-section') { ?> 
-	                                		<div id="portfolio-isotope-<?php echo $i++; ?>"> 
-	                                		<?php get_template_part( 'portfolio-section' ); ?> 
+	                                <?php if ($layout == 'portfolio-section') { ?>
+	                                		<div id="portfolio-isotope-<?php echo $i++; ?>">
+	                                		<?php get_template_part( 'portfolio-section' ); ?>
 	                                		</div> <?php
-	                                } ?> 
+	                                } ?>
 
-	                                <?php if ($layout == 'blog-section') {
-	                                        get_template_part( 'blog-section' );
-	                                } ?> 
+	                                <?php //if ($layout == 'blog-section') {
+	                                      //  get_template_part( 'blog-section' );
+	                                //} ?>
 
 	                                <?php if ($layout == 'client-section') {
 	                                        get_template_part( 'clients-section' );
-	                                } ?> 
+	                                } ?>
 
 	                                <?php if ($layout == 'team-section') {
 	                                        get_template_part( 'team-section' );
-	                                } ?> 
-	                                
+	                                } ?>
+
 	                                <?php if ($layout == 'social-section') {
 	                                        get_template_part( 'social-section' );
-	                                } ?> 	                                
+	                                } ?>
 
 	                                <?php if ($layout == 'twitter-section') {
 	                                        get_template_part( 'twitter-section' );
 	                                } ?>
-	
+
 				</div>
-				
+
+
+				<?php if(1 === 3) { ?>
 				<?php if($button1text || $button2text) { ?>
                                         	<ul class="sectionbuttons">
                                         		<?php if($button1text) { ?>
@@ -292,13 +294,13 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 	                                		<?php } ?>
 	                                	</ul>
                                 <?php } ?>
-
+				<?php } ?>
 			</div>
 
 		</section>
-	
-	<?php 
+
+	<?php
 	}
 	endwhile; endif; wp_reset_query(); ?>
-        
+
 <?php get_footer(); ?>

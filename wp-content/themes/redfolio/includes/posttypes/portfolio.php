@@ -11,12 +11,12 @@ function taxonomy_portfoliocategory() {
                 'all_items' => __( 'All Portfolio Categories', 'gxg_textdomain' ),
                 'parent_item' => __( 'Parent Portfolio Category', 'gxg_textdomain' ),
                 'parent_item_colon' => __( 'Parent Portfolio Category:', 'gxg_textdomain' ),
-                'edit_item' => __( 'Edit Portfolio Category', 'gxg_textdomain' ), 
+                'edit_item' => __( 'Edit Portfolio Category', 'gxg_textdomain' ),
                 'update_item' => __( 'Update Portfolio Category', 'gxg_textdomain' ),
                 'add_new_item' => __( 'Add New Portfolio Category', 'gxg_textdomain' ),
                 'new_item_name' => __( 'New Portfolio Category Name', 'gxg_textdomain' ),
                 'menu_name' => __( 'Portfolio Category', 'gxg_textdomain' ),
-        ); 	
+        );
 
 register_taxonomy(
         'portfolio_category',
@@ -26,10 +26,10 @@ register_taxonomy(
                 'labels' => $labels,
                 'show_ui' => true,
                 'query_var' => true,
-                'rewrite' => array( 'slug' => 'portfoliocategory' ),
+                'rewrite' => array( 'slug' => 'portfolio' ),
         )
 );
-} 
+}
 
 
 // REGISTER PORTFOLIO POST TYPE
@@ -52,7 +52,7 @@ function posttype_portfolio() {
         );
 
         $imagepath =  get_template_directory_uri() . '/images/posttypeimg/';
-        
+
         global $wp_version;
 	if( version_compare( $wp_version, '3.8', '>=') ) {
 	    	$img =  'po.png';
@@ -67,11 +67,11 @@ function posttype_portfolio() {
                 'publicly_queryable' => true,
                 'exclude_from_search' => false,
                 'show_ui' => true,
-                'rewrite' => array( 'slug' => 'portfolioitem' ),
+                'rewrite' => array( 'slug' => 'portfolio' ),
                 'hierarchical' => true,
                 'menu_position' => 5,
                 'menu_icon' => $imagepath . $img,
-                'supports' => array('thumbnail','title', 'editor','revisions')
+                'supports' => array('thumbnail','title', 'editor','revisions',  'page-attributes')
 
         );
 
