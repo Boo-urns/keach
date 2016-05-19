@@ -26,7 +26,7 @@ register_taxonomy(
                 'labels' => $labels,
                 'show_ui' => true,
                 'query_var' => true,
-                'rewrite' => array( 'slug' => 'portfolio' ),
+                'rewrite' => array( 'slug' => 'portfolioitem' ),
         )
 );
 }
@@ -67,7 +67,7 @@ function posttype_portfolio() {
                 'publicly_queryable' => true,
                 'exclude_from_search' => false,
                 'show_ui' => true,
-                'rewrite' => array( 'slug' => 'portfolio' ),
+                'rewrite' => array( 'slug' => 'portfolioitem' ),
                 'hierarchical' => true,
                 'menu_position' => 5,
                 'menu_icon' => $imagepath . $img,
