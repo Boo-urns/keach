@@ -179,8 +179,11 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
         $placeholder_image = get_template_directory_uri() . '/images/ll.png';
 
         ?>
-
-	        <section id="section-<?php the_ID(); ?>" class="slide slide-<?php echo $layout; ?>">
+					<?php if(get_the_ID() === 80) { // Portfolio ?>
+							<section id="portfolio" class="slide slide-<?php echo $layout; ?>">
+					<?php } else { ?>
+	        	<section id="section-<?php the_ID(); ?>" class="slide slide-<?php echo $layout; ?>">
+					<?php } ?>
 
 
 
@@ -224,9 +227,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                                         } ?>
 
                                                 <div class="contact-form equalheight <?php echo $grid; ?>">
-                                                        <?php if ( of_get_option('gg_cf7') ) {
-                                                                echo do_shortcode( of_get_option('gg_cf7') );
-                                                        } ?>
+                                                        <?php  echo do_shortcode( '[contact-form-7 id="357" title="redfolio-form"]' ); ?>
                                                 </div>
 
                                                 <?php
@@ -264,9 +265,9 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 	                                      //  get_template_part( 'blog-section' );
 	                                //} ?>
 
-	                                <?php if ($layout == 'client-section') {
-	                                        get_template_part( 'clients-section' );
-	                                } ?>
+	                                <?php //if ($layout == 'client-section') {
+	                                      //  get_template_part( 'clients-section' );
+	                                //} ?>
 
 	                                <?php if ($layout == 'team-section') {
 	                                        get_template_part( 'team-section' );
