@@ -179,14 +179,11 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
         $placeholder_image = get_template_directory_uri() . '/images/ll.png';
 
         ?>
-					<?php if(get_the_ID() === 80) { // Portfolio ?>
-							<section id="portfolio" class="slide slide-<?php echo $layout; ?>">
-					<?php } else { ?>
-	        	<section id="section-<?php the_ID(); ?>" class="slide slide-<?php echo $layout; ?>">
-					<?php } ?>
-
-
-
+					<?php if(get_the_ID() === 80) { // Portfolio
+						$idName = explode('-section', $layout);
+						?>
+							<section id="<?php echo $idName[0]; ?>" class="slide slide-<?php echo $layout; ?>">
+					
                         <div class="image-fullbg" <?php if( !$detect->isMobile() && $image != '' ){ ?> data-stellar-background-ratio="0"  <?php } ?> style="background-color:<?php echo $bgcolor  ?>; <?php if( $image != '' ){ ?>background-image: url(<?php echo $image[0]; ?>); <?php } ?> ; <?php if( $detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_tablet; ?>px; <?php }  if( $detect->isMobile() && !$detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_mobile; ?>px; <?php } ?> "></div>
 
 
