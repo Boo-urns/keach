@@ -181,8 +181,13 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
         ?>
 					<?php
 						$idName = explode('-section', $layout);
+						if($idName[0] === 'default') {
+							$idName = get_the_title();
+						} else {
+							$idName = $idName[0];
+						}
 						?>
-							<section id="<?php echo $idName[0]; ?>" class="slide slide-<?php echo $layout; ?>">
+							<section id="<?php echo $idName; ?>" class="slide slide-<?php echo $layout; ?>">
 
                         <div class="image-fullbg" <?php if( !$detect->isMobile() && $image != '' ){ ?> data-stellar-background-ratio="0"  <?php } ?> style="background-color:<?php echo $bgcolor  ?>; <?php if( $image != '' ){ ?>background-image: url(<?php echo $image[0]; ?>); <?php } ?> ; <?php if( $detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_tablet; ?>px; <?php }  if( $detect->isMobile() && !$detect->isTablet() && $image != '' ){ ?> background-position: 50% <?php echo $offset_mobile; ?>px; <?php } ?> "></div>
 
