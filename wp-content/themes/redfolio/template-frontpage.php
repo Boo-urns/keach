@@ -182,7 +182,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					<?php
 						$idName = explode('-section', $layout);
 						if($idName[0] === 'default') {
-							$idName = get_the_title();
+							$idName = strtolower(get_the_title());
 						} else {
 							$idName = $idName[0];
 						}
