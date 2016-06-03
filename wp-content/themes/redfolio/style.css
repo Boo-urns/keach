@@ -1093,7 +1093,7 @@ body.page-template-template-frontpage-php  {
 #home-image {
   background-position: 50% 80px !important;
 }
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   #home-image {
     background-position: 50% 0 !important;
   }
