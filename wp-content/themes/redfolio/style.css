@@ -1093,6 +1093,11 @@ body.page-template-template-frontpage-php  {
 #home-image {
   background-position: 50% 80px !important;
 }
+@media only screen and (max-width: 600px) {
+  #home-image {
+    background-position: 50% 0 !important;
+  }
+}
 /* blog section / blog page */
 
 .element-blog {
