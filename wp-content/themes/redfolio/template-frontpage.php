@@ -201,8 +201,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                                         <div class="section-intro">
 
                                                 <?php if($title) { ?>
-                                                <h1 class="slide-title" style="color:<?php echo $titlecolor; ?>; font-size:<?php echo $sectiontitlesize; ?>px; min-font-size:<?php echo $minsectiontitlesize; ?>px;">
-                                                        <div class="min-slide-title" style="font-size:<?php echo $minsectiontitlesize; ?>px;"></div>
+                                                <h1 class="slide-title">
                                                         <?php echo $title; ?>
                                                 </h1>
                                                 <?php } ?>
