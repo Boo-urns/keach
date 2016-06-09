@@ -3490,3 +3490,37 @@ select  {
         height: 44px;
         color: #eee;
         }
+
+
+        #top-bar { background-color: #fff; box-shadow: 0px 0px 10px #ccc; }
+        #searchbar #searchinput {
+            background-color: #14b8f5 !important;
+        }
+        #options li a.selected {
+            color: #14b8f5;
+        }
+        ul.sf-menu .current-menu-item:not(.gxg-home) a {
+         color: #aaa;
+        }
+        ul.sf-menu .current-menu-item:not(.gxg-home) a:hover {
+         color: #14b8f5;
+        }
+
+        textarea, input {
+            background-color: transparent !important;
+            color: #000;
+        border: 1px solid #ccc;
+        }
+        .wrap-content {
+          width: 100%;
+          overflow: auto;
+        }
+        .center-content-one-half {
+          margin: 0 auto;
+          float: none;
+          width: 50%;
+        }
+        .center-content-one-half h4 {
+          color: #14b8f5;
+          text-align: center;
+        }
