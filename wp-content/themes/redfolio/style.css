@@ -3514,6 +3514,7 @@ select  {
         .wrap-content {
           width: 100%;
           overflow: auto;
+          margin: 20px 0;
         }
         .center-content-one-half {
           margin: 0 auto;
@@ -3524,3 +3525,16 @@ select  {
           color: #14b8f5;
           text-align: center;
         }
+  section .slide-title {
+    font-size: 80px;
+    color: #1a1a1a;
+  }
+  .contact-section .slide-title {
+    font-size: 64px;
+  }
+  
+  @media (max-width: 960px) {
+    section .slide-title {
+      font-size: 48px;
+    }
+  }
