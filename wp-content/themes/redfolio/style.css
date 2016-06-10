@@ -3544,7 +3544,7 @@ select  {
       font-size: 48px;
     }
     #topnavi .sbOptions a:hover {
-      color: #14b8f5;
+      color: #14b8f5 !important;
     }
   }
   @media (max-width: 768px) {
