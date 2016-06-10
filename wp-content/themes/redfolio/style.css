@@ -3537,6 +3537,9 @@ select  {
     border-color: #14b8f5;
   }
   @media (max-width: 960px) {
+    #topnavi .sbOptions {
+      top: 48px;
+    }
     section .slide-title {
       font-size: 48px;
     }
