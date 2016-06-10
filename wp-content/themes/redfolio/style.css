@@ -3545,4 +3545,7 @@ select  {
     .center-content-one-half {
       width: 100%;
     }
+    section .slide-title {
+      font-size: 32px !important;
+    }
   }
