@@ -3543,7 +3543,8 @@ select  {
     section .slide-title {
       font-size: 48px;
     }
-    #topnavi .sbOptions a:hover {
+    #topnavi .sbOptions a:hover,
+    #topnavi .sbOptions a:focus {
       color: #14b8f5 !important;
     }
   }
