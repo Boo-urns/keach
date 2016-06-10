@@ -3538,10 +3538,13 @@ select  {
   }
   @media (max-width: 960px) {
     #topnavi .sbOptions {
-      top: 48px;
+      top: 48px !important;
     }
     section .slide-title {
       font-size: 48px;
+    }
+    #topnavi .sbOptions a:hover {
+      color: #14b8f5;
     }
   }
   @media (max-width: 768px) {
