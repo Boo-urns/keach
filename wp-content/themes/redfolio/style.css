@@ -3532,9 +3532,17 @@ select  {
   .contact-section .slide-title {
     font-size: 64px;
   }
-  
+  section a {
+    color: #14b8f5;
+    border-color: #14b8f5;
+  }
   @media (max-width: 960px) {
     section .slide-title {
       font-size: 48px;
+    }
+  }
+  @media (max-width: 768px) {
+    .center-content-one-half {
+      width: 100%;
     }
   }
