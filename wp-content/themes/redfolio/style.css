@@ -2185,6 +2185,7 @@ input.wpcf7-submit {
         float: right;
         width: auto !important;
         text-transform: uppercase;
+        background-color: #14b8f5 !important;
         }
 
 span.wpcf7-not-valid-tip {
