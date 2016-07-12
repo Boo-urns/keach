@@ -228,7 +228,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                                         } ?>
 
                                                 <div class="contact-form equalheight <?php echo $grid; ?>">
-                                                        <?php  echo do_shortcode( '[contact-form-7 id="357" title="redfolio-form"]' ); ?>
+                                                        <?php  echo do_shortcode( '[contact-form-7 id="905" title="Contact Form"]' ); ?>
                                                 </div>
 
                                                 <?php
