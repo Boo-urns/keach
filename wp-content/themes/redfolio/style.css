@@ -2187,7 +2187,15 @@ input.wpcf7-submit {
         text-transform: uppercase;
         background-color: #14b8f5 !important;
         }
-
+@media (max-width: 480px) {
+  input.wpcf7-submit {
+    float: left;
+    clear: both;
+  }
+}
+.g-recaptcha {
+  float: left;
+}
 span.wpcf7-not-valid-tip {
 	text-transform: uppercase;
 	font-size: 12px;
