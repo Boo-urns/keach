@@ -3562,6 +3562,9 @@ select  {
       width: 100%;
     }
     section .slide-title {
-      font-size: 32px !important;
+      font-size: 28px !important;
+    }
+    h4 {
+      font-size: 18px;
     }
   }
