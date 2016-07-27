@@ -3537,7 +3537,10 @@ select  {
   section .slide-title {
     font-size: 80px;
     color: #1a1a1a;
+    margin-bottom: 40px;
   }
+
+  section .slide-title.smaller,
   .contact-section .slide-title {
     font-size: 64px;
   }
@@ -3551,6 +3554,9 @@ select  {
     }
     section .slide-title {
       font-size: 48px;
+    }
+    section .slide-title.smaller {
+      font-size: 36px;
     }
     #topnavi .sbOptions a:hover,
     #topnavi .sbOptions a:focus {
