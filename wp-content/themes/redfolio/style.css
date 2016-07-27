@@ -3542,7 +3542,7 @@ select  {
 
   section .slide-title.smaller,
   .contact-section .slide-title {
-    font-size: 64px;
+    font-size: 64px !important;
   }
   section a {
     color: #14b8f5;
