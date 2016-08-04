@@ -3556,7 +3556,7 @@ select  {
       font-size: 48px;
     }
     section .slide-title.smaller {
-      font-size: 36px;
+      font-size: 36px !important;
     }
     #topnavi .sbOptions a:hover,
     #topnavi .sbOptions a:focus {
@@ -3567,7 +3567,8 @@ select  {
     .center-content-one-half {
       width: 100%;
     }
-    section .slide-title {
+    section .slide-title,
+    section .slide-title.smaller {
       font-size: 28px !important;
     }
     h4 {
