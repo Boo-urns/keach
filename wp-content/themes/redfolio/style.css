@@ -3568,6 +3568,7 @@ select  {
       width: 100%;
     }
     section .slide-title,
+    .contact-section .slide-title,
     section .slide-title.smaller {
       font-size: 28px !important;
     }
